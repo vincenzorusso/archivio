@@ -1,0 +1,26 @@
+{{#each elencoArchivi}}
+			<li class="archivio">{{>titoloelementi}}</li>
+			
+				{{#each elencoFondi}}
+					<li class="fondo">F.: {{>titoloelementi}}</li>
+					{{#each elencoSerie}}
+						<li class="serie">S.: {{>titoloelementi}}</li>
+							{{#each elencoFascicoli}}
+								<li class="fascicolo">Fa.: {{>titoloelementi}}</li>
+									{{#each elencoUnita}}
+										<li class="unità">U.: {{>titoloelementi}}</li>
+										</div>
+										</div>					
+									{{/each}}	
+								</div>
+								</div>					
+							{{/each}}
+						</div>
+						</div>
+					{{/each}}
+					</div>
+					</div>
+				{{/each}}
+				</div>
+				</div>
+        {{/each}}

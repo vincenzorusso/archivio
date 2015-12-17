@@ -1,0 +1,34 @@
+<template name="inserisciElemento">
+<div class="modal fade" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h4 class="modal-title">Nuovo elemento</h4>
+			</div>
+
+			<div class="modal-body">
+				{{#autoForm collection="Archivi" id="insertBookForm" type="insert"}}
+					<fieldset>
+						<legend>Inserisci un dato in archivio</legend>
+						{{> afQuickField name='livello' options="allowed" firstOption="(Scegli un'opzione)"}}
+						{{> afQuickField name='titolo'}}
+							{{> afQuickField name='fapartedi'}}
+						{{> afQuickField name='segnatura'}}
+						{{> afQuickField name='data'}}
+						{{> afQuickField name='consistenza'}}
+						{{> afQuickField name='produttore'}}
+					</fieldset>
+					<button tupe="submit" class="btn btn-primary">Inserisci</button>
+				{{/autoForm}}	
+			</div>
+	
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="chiudi">Chiudi</button>
+            </div>
+	
+		</div>
+    </div>
+</div>
+
+</template>

@@ -1,0 +1,27 @@
+
+<template name="ricerca">
+	<div id="boxricerca">
+		{{> boxricerca}}
+	</div>
+	<div id="risultatiricerca">
+		{{> search}}
+	</div>
+</template>
+
+<template name="boxricerca">
+    <FORM id="search-box">
+        <h4>Titolo</h4>
+        <input type="text" name="search-box" label="Titolo">
+         <p> filtra l'elenco in base al titolo</p>    
+    </form>
+</template>
+
+<template name="search">
+    {{#each elencogenerale}}
+        <div class="fascicolo">
+			{{>titoloelementi}}
+			Inserita in:{{fapartedi}}
+        </div>
+		
+    {{/each}}
+</template>
