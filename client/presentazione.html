@@ -1,0 +1,80 @@
+<template name="elencoelementi">
+    <h2>Elenco elementi</h2>
+    <ul>
+        {{#each elencoArchivi}}
+		<li class="archivio">
+			{{>zoomelementi}}
+			Archivio: {{>titoloelementi}}
+			<div id="figli{{_id}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			<div class="panel-body">
+				{{#each elencoFondi}}
+				<li class="fondo">
+					{{>zoomelementi}}
+					Fondo: {{>titoloelementi}}
+					<div id="figli{{_id}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						{{#each elencoSerie}}
+						<li class="serie">
+							{{>zoomelementi}}
+							Serie: {{>titoloelementi}}
+							<div id="figli{{_id}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">
+								{{#each elencoFascicoli}}
+								<li class="fascicolo">	
+									{{>zoomelementi}}
+									Fascicolo: {{>titoloelementi}}
+									<div id="figli{{_id}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										{{#each elencoUnita}}
+											<li class="unità">
+												Unità: {{>titoloelementi}}	
+											</li>
+										{{/each}}	
+									</div>
+									</div>					
+								</li>
+								{{/each}}
+							</div>
+							</div>
+						</li>
+						{{/each}}
+					</div>
+					</div>
+				</li>
+				{{/each}}
+			</div>
+			</div>
+        </li>
+		{{/each}}
+    </ul>
+    
+</template>
+
+<template name ="titoloelementi">
+	<span class="selezionami {{selectedClass}}" id="titolo">{{titolo}}</span>
+	<a class="collapsed" data-toggle="collapse" href="#{{_id}}" aria-expanded="true" aria-controls="{{_id}}" rel="tooltip" data-placement="left" title="Vedi la descrizione di questo elemento">
+	<span class ="glyphicon glyphicon-info-sign"></span></a> 
+	{{# if currentUser}}
+		<a href="#" id="inserisci"  rel="tooltip" data-placement="right" title="Inserisci un nuovo elemento qui">
+			<span class="glyphicon glyphicon-arrow-left"></span>
+		</a>
+	{{/if}}			
+	<div id="{{_id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		<div class="panel-body">  
+			<p>Segnatura: {{segnatura}}</p>
+			<p>Data: {{data}}</p>
+			<p>Consistenza: {{consistenza}}</p>
+			<p>Produttore: {{produttore}}</p>
+			{{# if currentUser}}
+				<a href="#" id="modifica" class="btn btn-primary btn-sm" >
+					<span class="glyphicon glyphicon-pencil"></span>
+					Modifica
+				</a>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="zoomelementi">
+	<a class="collapsed glyphicon glyphicon-record" data-toggle="collapse" href="#figli{{_id}}" aria-expanded="true" aria-controls="figli{{_id}}" rel="tooltip" data-placement="left" title="Espandi/comprimi elementi contenuti"></a>
+</template>

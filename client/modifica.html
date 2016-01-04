@@ -1,0 +1,35 @@
+<template name="modificaElemento">
+<div class="modal fade" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h4 class="modal-title">Modifica elemento</h4>
+			</div>
+
+			<div class="modal-body">
+				{{#autoForm id="afUpdateDemo" type=formType doc=elementoSelezionatoDoc collection="Archivi"}}
+					<fieldset>
+						{{> afQuickField name='livello' options="allowed" firstOption="(Scegli un'opzione)"}}
+						{{> afQuickField name='titolo'}}
+						{{> afQuickField name='fapartedi'}}
+						{{> afQuickField name='segnatura'}}
+						{{> afQuickField name='data'}}
+						{{> afQuickField name='consistenza'}}
+						{{> afQuickField name='produttore'}}
+					</fieldset>
+
+					<button type="submit" class="btn btn-primary">Modifica</button>
+					<button type="reset"  class="btn btn-default">Annulla</button>
+				{{/autoForm}}	
+			</div>
+	
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="chiudi">Chiudi</button>
+            </div>
+	
+		</div>
+	</div>
+</div>
+
+</template>

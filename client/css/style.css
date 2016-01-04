@@ -1,0 +1,65 @@
+﻿.archivio #titolo{
+font-weight: bold;
+font-size: 3.2rem;
+color: #283A10;
+}
+
+.selected{
+	background-color:yellow;
+}
+
+.fondo {
+	margin-left: 5%;
+}
+
+.fondo #titolo{
+font-weight: bold;
+color: #ACD661;
+font-size: 2.4rem;
+}
+
+.serie  {
+	margin-left: 5%;
+	
+}
+
+.serie #titolo{
+font-weight: bold;
+color: #CBF08B;
+
+font-size: 2rem;
+}
+
+.fascicolo {
+	margin-left: 5%;
+}
+
+.fascicolo #titolo{
+font-weight: bold;
+color: #72776A;
+font-size: 1.8rem;
+}
+
+.unità {
+	margin-left: 5%;
+}
+.unità #titolo{
+font-weight: bold;
+color: #999C92;
+font-size: 1.4rem;
+}
+
+li {
+list-style-type: none;
+}
+
+#boxricerca {
+margin-top: 3.2rem;
+float:left;
+width: 30%;
+}
+
+#risultatiricerca {
+margin-top: 3.2rem;
+float:left;
+}
