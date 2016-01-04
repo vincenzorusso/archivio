@@ -1,0 +1,39 @@
+<head>
+	<title>Archivio</title>
+</head>
+
+<body>
+	<div style="width:80%; margin-left: 5%">
+		<h1>Archivio</h1>
+		<div style="float:right">{{> loginButtons}}</div>
+		{{>index}} 
+  	</div>
+		
+</body>
+
+
+<template name="index">
+ 
+	<ul class="nav nav-pills">
+		<li data-template="elencoelementi" class="active"><a href="#">Consulta</a></li>
+		{{#if currentUser}}<li data-template="insertBookForm"><a  href="#">Inserisci</a></li>{{/if}}
+		<li data-template="ricerca"><a href="#">Ricerca</a></li>
+	</ul>
+	{{> Template.dynamic template=tab}}
+</template>
+
+<template name="insertBookForm">
+	{{#autoForm collection="Archivi" id="insertBookForm" type="insert"}}
+		<fieldset>
+			<legend>Inserisci un dato in archivio</legend>
+			{{> afQuickField name='livello' options="allowed" firstOption="(Scegli un'opzione)"}}
+			{{> afQuickField name='titolo'}}
+				{{> afQuickField name='fapartedi'}}
+			{{> afQuickField name='segnatura'}}
+			{{> afQuickField name='data'}}
+			{{> afQuickField name='consistenza'}}
+			{{> afQuickField name='produttore'}}
+		</fieldset>
+		<button tupe="submit" class="btn btn-primary">Invia</button>
+	{{/autoForm}}
+</template>
